@@ -2,7 +2,7 @@
 We release MarsScapes, the first panoramic image dataset for unstructured terrain understanding on Mars. The dataset contains 195 panoramas of Martian surface with fine-grained annotations for semantic and instance segmentation, facilitating high-level scene understanding of Martian landforms and further enhancing the navigability of rovers over rough terrains in large areas.
 
 ## Definitions of various terrains on Mars
-To characterize all landforms on Mars and label all pixels without omission, we define eight categories. The following figure illustrates a sample of each category, including big rock (marked with a yellow polygon), bedrock (green), sand (pink), soil (in the whole (d)), gravel (red), steep slope (azure), sky (grey), and unknown classes (brown). We give specific descriptions and more examples of each category in the [supplementary.pdf](https://github.com/InRobots/MarsScapes/files/7965342/supplementary.pdf).
+To characterize all landforms on Mars and label all pixels without omission, we define eight categories. They are illustrated as follows, including big rock (marked with a yellow polygon), bedrock (green), sand (pink), soil (in the whole (d)), gravel (red), steep slope (azure), sky (grey), and unknown classes (brown). We give specific descriptions and more examples of each category in the [supplementary.pdf](https://github.com/InRobots/MarsScapes/files/7965342/supplementary.pdf).
 
 <div align=center>
 <img src="https://user-images.githubusercontent.com/33188908/151687950-12db66f5-ef5f-4c62-8298-bdaf850d1b27.png" width="700px">
