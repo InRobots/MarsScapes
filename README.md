@@ -2,7 +2,7 @@
 We release MarsScapes, the first panoramic image dataset for unstructured terrain understanding on Mars. The dataset provides fine-grained annotations of eight terrain categories to encompass all pixels without omission. It contains 195 panoramas of Martian surface for semantic and instance segmentation, facilitating high-level semantic understanding of Martian landforms and further enhancing the navigability of rovers over rough terrains in large areas.
 
 ## Definitions of various terrains on Mars
-To characterize all landforms on Mars and label all pixels without omission, we define eight categories. Figure 4 illustrates a sample of each category, including big rock (marked with a yellow polygon), bedrock (green), sand (pink), soil (in the whole Figure 4 (d)), gravel (red), steep slope (azure), sky (grey), and unknown classes (brown). We give specific descriptions and more examples of each category in the [supplementary material](https://github.com/InRobots/MarsScapes/blob/main/supplementary.pdf).
+To characterize all landforms on Mars and label all pixels without omission, we define eight categories. Figure 4 illustrates a sample of each category, including big rock (marked with a yellow polygon), bedrock (green), sand (pink), soil (in the whole Figure 4 (d)), gravel (red), steep slope (azure), sky (grey), and unknown classes (brown). We give specific descriptions and more examples of each category in the [supplementary.pdf](https://github.com/InRobots/MarsScapes/files/7965342/supplementary.pdf).
 
 ## Data collection and annotation
 The raw mars images are courtesy of NASA/JPL-Caltech. You can read the full use policy [here](https://www.jpl.nasa.gov/jpl-image-use-policy). We picked out 3379 images that met our criteria and employed PtGui software to splice them into 195 panoramas.
@@ -12,7 +12,8 @@ we adopt [PixelAnnotationTool](https://github.com/abreheret/PixelAnnotationTool)
 
 ## Dataset structure
 
-[file.pdf](https://github.com/InRobots/MarsScapes/files/7965340/file.pdf)
+
+
 
 
 To evaluate the data volume of our MarsScapes dataset, we compare it with SkyScapes [1], a panoramic image dataset of urban infrastructure, shown in Table 1.
