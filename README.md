@@ -1,18 +1,28 @@
 # MarsScapes
 We release MarsScapes, the first panorama dataset of unstructured Martian terrains for semantic and instance segmentation. The dataset contains a collection of 195 terrain panoramas composed of 3779 raw images captured by the Curiosity rover on the surface of Mars. All pixels of the panoramas are labeled with fine-grained annotations according to 8 categories including soil, bedrock, sand, gravel, big rock, steep slope, sky and unknown. 
 
+## Definitions of Martian terrains
+To characterize all landforms on Mars and label all pixels without omission, we define eight categories. Figure 4 illustrates a sample of each category, including big rock (marked with a yellow polygon), bedrock (green), sand (pink), soil (in the whole Figure 4 (d)), gravel (red), steep slope (azure), sky (grey), and unknown classes (brown). Limited by space, we give specific descriptions and more examples of each category in the [supplementary material](https://www.jpl.nasa.gov/jpl-image-use-policy).
+
 
 The dataset can facilitate scene understanding on Martian surface, further enhancing the reliability of Mars exploration missions. 
 
 https://mars.nasa.gov/msl/multimedia/raw-images/
 
-Here we show panorama images, semantic segmentation annotations and instance segmentation annotations of three samples in MarsScapes.
+
+
+
+
+To evaluate the data volume of our MarsScapes dataset, we compare it with SkyScapes [1], a panoramic image dataset of urban infrastructure, shown in Table 1.
 
 |**Dataset** | **Classes** | **Panoramic images** | **Sub-images for training** | **Image size** | **Annotated pixels** |
 |:-:|:-:|:-:|:-:|:-:|:-:|
 | SkyScapes | 31 | 16 | 8820 | 5616×3744 | 3.36×10<sup>8</sup> |
 | MarsScapes | 18 | 195 | 10404 | Widths:1230∼12062 Heights: 472∼1649 | 3.92×10<sup>8</sup> |
 
+
+
+Here we show panorama images, semantic segmentation annotations and instance segmentation annotations of three samples in MarsScapes.
 
 Sample 137_1
 ![137_1](https://user-images.githubusercontent.com/33188908/151661264-eaf2bf85-1568-4f12-8543-20ee5f5198a6.png)
