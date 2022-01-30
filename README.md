@@ -2,20 +2,24 @@
 We release MarsScapes, the first panoramic image dataset for unstructured terrain understanding on Mars. The dataset provides fine-grained annotations of eight terrain categories to encompass all pixels without omission. It contains 195 panoramas of Martian surface for semantic and instance segmentation, facilitating high-level semantic understanding of Martian landforms and further enhancing the navigability of rovers over rough terrains in large areas.
 
 ## Definitions of various terrains on Mars
-To characterize all landforms on Mars and label all pixels without omission, we define eight categories. The following figure illustrates a sample of each category, including big rock (marked with a yellow polygon), bedrock (green), sand (pink), soil (in the whole Figure 4 (d)), gravel (red), steep slope (azure), sky (grey), and unknown classes (brown). We give specific descriptions and more examples of each category in the [supplementary.pdf](https://github.com/InRobots/MarsScapes/files/7965342/supplementary.pdf).
+To characterize all landforms on Mars and label all pixels without omission, we define eight categories. The following figure illustrates a sample of each category, including big rock (marked with a yellow polygon), bedrock (green), sand (pink), soil (in the whole (d)), gravel (red), steep slope (azure), sky (grey), and unknown classes (brown). We give specific descriptions and more examples of each category in the [supplementary.pdf](https://github.com/InRobots/MarsScapes/files/7965342/supplementary.pdf).
 
 ![definition](https://user-images.githubusercontent.com/33188908/151687950-12db66f5-ef5f-4c62-8298-bdaf850d1b27.png)
-
 
 ## Data collection and annotation
 The raw mars images are courtesy of NASA/JPL-Caltech. You can read the full use policy [here](https://www.jpl.nasa.gov/jpl-image-use-policy). We picked out 3379 images that met our criteria and employed PtGui software to splice them into 195 panoramas.
 
 we adopt [PixelAnnotationTool](https://github.com/abreheret/PixelAnnotationTool), a pseudo manual annotation tool that uses watershed algorithm in OpenCV, which reduces part of our workload by automatically separating two adjacent terrains with high contrast. To store the annotation data in a desirable JSON format, we rewrite the [create_poly_json.py](https://github.com/InRobots/MarsScapes/blob/main/create_poly_json.py) file of the software.
 
-## Dataset structure
+## Dataset structure and sample
+The data file structure of MarsScapes is shown in the following figure.
+![file](https://user-images.githubusercontent.com/33188908/151687981-648783f0-fe0d-4f9a-aca0-c0f922d97c61.png)
 
+The _image_ folder contains 195 panoramic RGB images, whose widths range from 1230 to 12062 pixels and heights from 472 to 1649 pixels. Each image is stored with the naming convention _<Sol_num>.png_, where _Sol_ denotes the number of days Curiosity has traveled on Mars and _num_ represents the number of panoramas.
 
+In the _semantic_ folder, _<Sol_num>_color.png_ is the visualization of semantic annotations for 8 categories and it is converted into a single-channel _<Sol_num>_semanticId.png_ for semantic segmentation research. Different from the semantic annotation of each terrain type, individual instances of the same terrain are labeled in _<Sol_num>_instanceId.png_, which can be used in instance segmentation research. In addition, _<Sol_num>_polygon.json_ provides a human-readable text format for annotations.
 
+When MarsScapes is used to evaluate the networks based on deep learning, the raw panoramas and corresponding annotation images are too big to fit into existing GPUs. So we have to settle for second best, pre-processing them before training. Referring to the processing methods of the SkyScapes dataset \cite{skyscapes}, we crop panoramas and corresponding annotation images into 512 × 512 sub-images with 50\% overlap between adjacent patches in both the horizontal and vertical directions. After flipping horizontally, we obtain 10404 samples and divide them into a group of 6243 for training, 2081 for validation and 2080 for testing. Taking the processed \verb"<Sol_num_h_w_f>.png" in the folder \verb"train" for example, \verb"h" denotes the h-th sub-image in the vertical direction, \verb"w" denotes the w-th sub-image in the horizontal direction, and \verb"f" is the stamp of horizontal flip. The folder \verb"list" includes the paths for processed images of the training, validation and test sets. All the codes of data processing are published together with MarsScapes, based on which other pre-processing methods can be implemented.
 
 ## 
 To evaluate the data volume of our MarsScapes dataset, we compare it with SkyScapes [1], a panoramic image dataset of urban infrastructure, shown in the following table.
