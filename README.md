@@ -16,7 +16,7 @@ we adopt [PixelAnnotationTool](https://github.com/abreheret/PixelAnnotationTool)
 ## Dataset structure
 The data file structure of MarsScapes is shown in the following figure.
 
-</div>
+<div align=center>
 <img src="https://user-images.githubusercontent.com/33188908/151687981-648783f0-fe0d-4f9a-aca0-c0f922d97c61.png" width="250px">
 </div>
 
@@ -39,17 +39,25 @@ Sample 551_1
 ![551_1_color](https://user-images.githubusercontent.com/33188908/151661355-3965cc5a-1364-489e-8944-1e82d4e88131.png)
 ![551_1_instanceId](https://user-images.githubusercontent.com/33188908/151661362-ede80fff-1b52-4b29-bd10-6d9746cd43eb.png)
 
-The _processed_ folder contains pre-processed images for training learning-based methods. Referring to [SkyScapes](chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/viewer.html?pdfurl=https%3A%2F%2Fopenaccess.thecvf.com%2Fcontent_ICCV_2019%2Fpapers%2FAzimi_SkyScapes__Fine-Grained_Semantic_Understanding_of_Aerial_Scenes_ICCV_2019_paper.pdf&clen=9005566&chunk=true) dataset, we crop panoramas and corresponding annotation images into 512 × 512 sub-images with 50\% overlap between adjacent patches in both the horizontal and vertical directions. After flipping horizontally, we obtain 10404 samples and divide them into a group of 6243 for training, 2081 for validation and 2080 for testing.
+The _processed_ folder contains pre-processed images for training learning-based methods. Referring to the [SkyScapes](chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/viewer.html?pdfurl=https%3A%2F%2Fopenaccess.thecvf.com%2Fcontent_ICCV_2019%2Fpapers%2FAzimi_SkyScapes__Fine-Grained_Semantic_Understanding_of_Aerial_Scenes_ICCV_2019_paper.pdf&clen=9005566&chunk=true) dataset, we crop panoramas and corresponding annotation images into 512 × 512 sub-images with 50\% overlap between adjacent patches in both the horizontal and vertical directions. After flipping horizontally, we obtain 10404 samples and divide them into a group of 6243 for training, 2081 for validation and 2080 for testing.
 
 
-## 
-To evaluate the data volume of our MarsScapes dataset, we compare it with SkyScapes [1], a panoramic image dataset of urban infrastructure, shown in the following table.
+## Commentary on MarsScapes
+To evaluate the data volume of our MarsScapes dataset, we compare it with [SkyScapes](chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/viewer.html?pdfurl=https%3A%2F%2Fopenaccess.thecvf.com%2Fcontent_ICCV_2019%2Fpapers%2FAzimi_SkyScapes__Fine-Grained_Semantic_Understanding_of_Aerial_Scenes_ICCV_2019_paper.pdf&clen=9005566&chunk=true), a panoramic image dataset of urban infrastructure, shown in the following table.
 
 |**Dataset** | **Classes** | **Panoramic images** | **Sub-images for training** | **Image size** | **Annotated pixels** |
 |:-:|:-:|:-:|:-:|:-:|:-:|
 | SkyScapes | 31 | 16 | 8820 | 5616×3744 | 3.36×10<sup>8</sup> |
 | MarsScapes | 18 | 195 | 10404 | Widths:1230∼12062 Heights: 472∼1649 | 3.92×10<sup>8</sup> |
 
+In terms of the number of annotated pixels, the two datasets share the same order of data volume. Processed by the same methods mentioned above, SkyScapes contains 8820 images and MarsScapes 10404 images for training. Although the Martian terrain is not as diverse as the urban infrastructure of SkyScapes, the annotation of MarsScapes requires more labor for the following reasons:
 
+1) SkyScapes is a dataset collected in structured environment, where the boundary of an instance can be described by regular line segments. Under unstructured environment like Mars surface, however, the boundary of a terrain is mostly irregular and blurred.
+
+2) Most semantic segmentation datasets are collected on the Earth, where most objects can be distinguished by color and shape. On Mars, however, the colors of the various terrains are so similar that labeling is mainly based on inconspicuous texture, such that the annotations of MarsScapes requires manual efforts instead of the assistance of annotation software.
+
+3) The classification of an unstructured terrain relies on its relationships with neighboring areas, which requires us to comply with more complex annotating standards.
+
+In conclusion, MarsScapes provides enough samples with fine-grained annotations for training learning-based methods, thus contributing to autonomous navigation of rovers on Mars.
 
 
