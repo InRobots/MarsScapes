@@ -10,8 +10,8 @@ Here we show panorama images, semantic segmentation annotations and instance seg
 
 |**Dataset** | **Classes** | **Panoramic images** | **Sub-images for training** | **Image size** | **Annotated pixels** |
 |:-:|:-:|:-:|:-:|:-:|:-:|
-| SkyScapes | 31 | 16 | 8820 | 5616 × 3744 | 3.36 × 10<sup>TM</sup> |
-| MarsScapes | 18 | 195 | 10404 | Widths:1230∼12062 Heights: 472∼1649 | 3.92 × 10<sup>TM</sup> |
+| SkyScapes | 31 | 16 | 8820 | 5616×3744 | 3.36×10<sup>8</sup> |
+| MarsScapes | 18 | 195 | 10404 | Widths:1230∼12062 Heights: 472∼1649 | 3.92×10<sup>8</sup> |
 
 
 Sample 137_1
