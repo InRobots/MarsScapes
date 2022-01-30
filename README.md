@@ -13,7 +13,7 @@ we adopt [PixelAnnotationTool](https://github.com/abreheret/PixelAnnotationTool)
 
 ## Dataset structure and sample
 The data file structure of MarsScapes is shown in the following figure.
-![file](https://user-images.githubusercontent.com/33188908/151687981-648783f0-fe0d-4f9a-aca0-c0f922d97c61.png)
+![file](img src="https://user-images.githubusercontent.com/33188908/151687981-648783f0-fe0d-4f9a-aca0-c0f922d97c61.png" width="100px")
 
 The _image_ folder contains 195 panoramic RGB images, whose widths range from 1230 to 12062 pixels and heights from 472 to 1649 pixels. Each image is stored with the naming convention _<Sol_num>.png_, where _Sol_ denotes the number of days Curiosity has traveled on Mars and _num_ represents the number of panoramas.
 
