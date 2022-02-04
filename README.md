@@ -1,17 +1,17 @@
 # MarsScapes
 We release MarsScapes, the first panoramic image dataset for unstructured terrain understanding on Mars. The dataset contains 195 panoramas of Martian surface with fine-grained annotations for semantic and instance segmentation, facilitating high-level scene understanding of Martian landforms and further enhancing the navigability of rovers over rough terrains in large areas. Note: Limited by the file size, we temporarily submit the first half of MarsScapes (i.e. from 122_1 to 527_1) as a representative subset. All samples will be provided after our paper is accepted.
 
-## Data collection and annotation
-The raw mars images are courtesy of NASA/JPL-Caltech. You can read the full use policy [here](https://www.jpl.nasa.gov/jpl-image-use-policy). We pick out 3379 images that meet our criteria and employ PtGui software to splice them into 195 panoramas.
-
-we adopt [PixelAnnotationTool](https://github.com/abreheret/PixelAnnotationTool), a pseudo manual annotation tool that uses watershed algorithm in OpenCV, which reduces part of our workload by automatically separating two adjacent terrains with high contrast. To store the annotation data in a desirable JSON format, we rewrite the [create_poly_json.py](https://github.com/InRobots/MarsScapes/blob/main/create_poly_json.py) file of the software.
-
 ## Definitions of various terrains on Mars
 To characterize all landforms on Mars and label all pixels without omission, we define eight categories. They are illustrated as follows, including big rock (marked with a yellow polygon), bedrock (green), sand (pink), soil (in the whole (d)), gravel (red), steep slope (azure), sky (grey), and unknown classes (brown). We give specific descriptions and more examples of each category in the [supplementary.pdf](https://github.com/InRobots/MarsScapes/files/7965342/supplementary.pdf).
 
 <div align=center>
 <img src="https://user-images.githubusercontent.com/33188908/151687950-12db66f5-ef5f-4c62-8298-bdaf850d1b27.png" width="700px">
 </div>
+
+## Data collection and annotation
+The raw mars images are courtesy of NASA/JPL-Caltech. You can read the full use policy [here](https://www.jpl.nasa.gov/jpl-image-use-policy). We pick out 3379 images that meet our criteria and employ PtGui software to splice them into 195 panoramas.
+
+We adopt [PixelAnnotationTool](https://github.com/abreheret/PixelAnnotationTool), a pseudo manual annotation tool that uses watershed algorithm in OpenCV, which reduces part of our workload by automatically separating two adjacent terrains with high contrast. To store the annotation data in a desirable JSON format, we rewrite the [create_poly_json.py](https://github.com/InRobots/MarsScapes/blob/main/create_poly_json.py) file of the software.
 
 ## Dataset structure
 The data file structure of MarsScapes is shown in the following figure.
