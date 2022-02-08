@@ -54,10 +54,8 @@ In terms of the number of annotated pixels, the two datasets share the same orde
 
 1) SkyScapes is a dataset collected in structured environment, where the boundary of an instance can be described by regular line segments. Under unstructured environment like Mars surface, however, the boundary of a terrain is mostly irregular and blurred;
 
-2) Most semantic segmentation datasets are collected on the Earth, where most objects can be distinguished by color and shape. On Mars, however, the colors of the various terrains are so similar that labeling is mainly based on inconspicuous texture, such that the annotations of MarsScapes requires manual efforts instead of the assistance of annotation software;
+2) Most semantic segmentation datasets are collected on the Earth, where most objects can be distinguished by color and shape. On Mars, however, the colors of the various terrains are so similar that labeling is mainly based on inconspicuous texture, which requires high manual effort for annotating MarsScapes, despite the assistance of [PixelAnnotationTool](https://github.com/abreheret/PixelAnnotationTool).
 
 3) The classification of an unstructured terrain relies on its relationships with neighboring areas, which requires us to comply with more complex annotating standards.
 
 In conclusion, MarsScapes provides enough samples with fine-grained annotations for training learning-based methods, thus contributing to autonomous navigation of rovers on Mars.
-
-
