@@ -10,7 +10,7 @@ The raw Mars images are courtesy of NASA/JPL-Caltech. You can read the full use 
 we adopt [PixelAnnotationTool](https://github.com/abreheret/PixelAnnotationTool), a manual annotation tool that uses watershed algorithm in OpenCV, which reduces part of our workload by automatically separating two adjacent terrains with high contrast. To store the annotation data in a desirable JSON format, we rewrite the [create_poly_json.py](https://github.com/InRobots/MarsScapes/blob/main/create_poly_json.py) file of the software.
 
 ## Dataset structure
-The data file structure of MarsScapes and the JSON format of a sample are shown in the following figure.
+The data file structure of MarsScapes and the JSON format of a sample are shown in the following figures.
 
 <div align=center>
 <img src="https://github.com/InRobots/MarsScapes/blob/main/IMG/structure.png" width="500px">
