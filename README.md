@@ -4,10 +4,6 @@ We release MarsScapes, the first panorama dataset for Martian terrain understand
 ## Definitions of various terrains on Mars
 To characterize all landforms on Mars and label all pixels without omission, we define nine categories, including soil, sand, gravel, bedrock, rocks, tracks, shadows, background and unknown. We give specific descriptions and examples of each category in the [supplementary.pdf](https://github.com/InRobots/MarsScapes/files/7965342/supplementary.pdf).
 
-<div align=center>
-<img src="https://user-images.githubusercontent.com/33188908/151687950-12db66f5-ef5f-4c62-8298-bdaf850d1b27.png" width="700px">
-</div>
-
 ## Data collection and annotation
 The raw mars images are courtesy of NASA/JPL-Caltech. You can read the full use policy [here](https://www.jpl.nasa.gov/jpl-image-use-policy). We pick out 3379 images that meet our criteria and employ PtGui software to splice them into 195 panoramas.
 
