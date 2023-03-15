@@ -13,7 +13,7 @@ we adopt [PixelAnnotationTool](https://github.com/abreheret/PixelAnnotationTool)
 The data file structure of MarsScapes and the JSON format of a sample are shown in the following figure.
 
 <div align=center>
-<img src="https://github.com/InRobots/MarsScapes/blob/main/IMG/structure.png" width="250px">
+<img src="https://github.com/InRobots/MarsScapes/blob/main/IMG/structure.png" width="500px">
 </div>
 
 The _image_ folder contains 195 panoramic RGB images, whose widths range from 1230 to 12062 pixels and heights from 472 to 1649 pixels. Each image is stored with the naming convention _<Sol_num>.png_, where _Sol_ denotes the number of days Curiosity has traveled on Mars and _num_ represents the number of panoramas.
