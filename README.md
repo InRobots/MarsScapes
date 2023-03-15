@@ -10,43 +10,42 @@ The raw mars images are courtesy of NASA/JPL-Caltech. You can read the full use 
 we adopt [PixelAnnotationTool](https://github.com/abreheret/PixelAnnotationTool), a pseudo manual annotation tool that uses watershed algorithm in OpenCV, which reduces part of our workload by automatically separating two adjacent terrains with high contrast. To store the annotation data in a desirable JSON format, we rewrite the [create_poly_json.py](https://github.com/InRobots/MarsScapes/blob/main/create_poly_json.py) file of the software.
 
 ## Dataset structure
-The data file structure of MarsScapes is shown in the following figure.
+The data file structure of MarsScapes and the JSON format of a sample are shown in the following figure.
 
 <div align=center>
-<img src="https://user-images.githubusercontent.com/33188908/151687981-648783f0-fe0d-4f9a-aca0-c0f922d97c61.png" width="250px">
+<img src="https://github.com/InRobots/MarsScapes/blob/main/IMG/structure.png" width="250px">
 </div>
 
 The _image_ folder contains 195 panoramic RGB images, whose widths range from 1230 to 12062 pixels and heights from 472 to 1649 pixels. Each image is stored with the naming convention _<Sol_num>.png_, where _Sol_ denotes the number of days Curiosity has traveled on Mars and _num_ represents the number of panoramas.
 
-In the _semantic_ folder, _<Sol\_num>\_color.png_ is the visualization of semantic annotations for 8 categories and it is converted into a single-channel _<Sol\_num>\_semanticId.png_ for semantic segmentation research. Different from the semantic annotation of each terrain type, individual instances of the same terrain are labeled in _<Sol\_num>\_instanceId.png_, which can be used in instance segmentation research. In addition, _<Sol\_num>\_polygon.json_ provides a human-readable text format for annotations. Here we show panorama images, semantic segmentation annotations and instance segmentation annotations of three samples in MarsScapes.
+In the _semantic_ folder, _<Sol\_num>\_color.png_ is the visualization of semantic annotations for 9 categories and it is converted into a single-channel _<Sol\_num>\_semanticId.png_ for semantic segmentation research. Different from the semantic annotation of terrain classes, all instances of the same class are distinguished in _<Sol\_num>\_instanceId.png_, which can be used in instance segmentation research. In addition, _<Sol\_num>\_polygon.json_ provides a human-readable text format for annotations. Here we show panorama images, semantic segmentation annotations and instance segmentation annotations of three samples in MarsScapes.
 
 Sample 137_1
-![137_1](https://user-images.githubusercontent.com/33188908/151661264-eaf2bf85-1568-4f12-8543-20ee5f5198a6.png)
-![137_1_color](https://user-images.githubusercontent.com/33188908/151661273-dda936f1-2877-4cd0-bb7b-d9300c861763.png)
-![137_1_instanceId](https://user-images.githubusercontent.com/33188908/151661278-434f5e3e-4c85-4b29-8288-b4338a9a6236.png)
+![137_1](https://github.com/InRobots/MarsScapes/blob/main/IMG/137_1.png)
+![137_1_color](https://github.com/InRobots/MarsScapes/blob/main/IMG/137_1_color.png)
+![137_1_instanceId](https://github.com/InRobots/MarsScapes/blob/main/IMG/137_1_instanceId.png)
 
 Sample 439_2
-![439_2](https://user-images.githubusercontent.com/33188908/151661318-ee7ee532-4912-4f43-a872-e1968f5b54c7.png)
-![439_2_color](https://user-images.githubusercontent.com/33188908/151661329-19526811-de25-4ee8-b1d9-0d46e1b9109b.png)
-![439_2_instanceId](https://user-images.githubusercontent.com/33188908/151661333-14c93e3c-4767-493b-86c6-d829ce99a3ab.png)
+![439_2](https://github.com/InRobots/MarsScapes/blob/main/IMG/439_2.png)
+![439_2_color](https://github.com/InRobots/MarsScapes/blob/main/IMG/439_2_color.png)
+![439_2_instanceId](https://github.com/InRobots/MarsScapes/blob/main/IMG/439_2_instanceId.png)
 
-Sample 551_1
-![551_1](https://user-images.githubusercontent.com/33188908/151661347-22942ef3-a62e-4762-a6af-0e1a94fc62d7.png)
-![551_1_color](https://user-images.githubusercontent.com/33188908/151661355-3965cc5a-1364-489e-8944-1e82d4e88131.png)
-![551_1_instanceId](https://user-images.githubusercontent.com/33188908/151661362-ede80fff-1b52-4b29-bd10-6d9746cd43eb.png)
+Sample 747_1
+![747_1](https://github.com/InRobots/MarsScapes/blob/main/IMG/747_1.png)
+![747_1_color](https://github.com/InRobots/MarsScapes/blob/main/IMG/747_1_color.png)
+![747_1_instanceId](https://github.com/InRobots/MarsScapes/blob/main/IMG/747_1_instanceId.png)
 
-The _processed_ folder contains pre-processed images for training learning-based methods. Referring to the [SkyScapes](https://openaccess.thecvf.com/content_ICCV_2019/html/Azimi_SkyScapes__Fine-Grained_Semantic_Understanding_of_Aerial_Scenes_ICCV_2019_paper.html) dataset, we crop panoramas and corresponding annotation images into 512 × 512 sub-images with 50\% overlap between adjacent patches in both the horizontal and vertical directions. After flipping horizontally, we obtain 10404 samples and divide them into a group of 6243 for training, 2081 for validation and 2080 for testing.
-
+The _processed_ folder contains pre-processed images for evaluating supervised learning and UDA methods. The panorama samples of MarsScapes facilitate data augmentation to obtain a more diverse terrain distribution, which is crucial for promoting UDA performance. Referring to the [SkyScapes](https://openaccess.thecvf.com/content_ICCV_2019/html/Azimi_SkyScapes__Fine-Grained_Semantic_Understanding_of_Aerial_Scenes_ICCV_2019_paper.html) dataset, we crop panoramas and corresponding annotation images into 512 × 512 sub-images with 50\% overlap between adjacent patches in both the horizontal and vertical directions. After flipping horizontally, we obtain 13618 images for the source domain and 7184 for the target domain.
 
 ## Commentary on MarsScapes
 To evaluate the data volume of our MarsScapes dataset, we compare it with [SkyScapes](https://openaccess.thecvf.com/content_ICCV_2019/html/Azimi_SkyScapes__Fine-Grained_Semantic_Understanding_of_Aerial_Scenes_ICCV_2019_paper.html), a panoramic image dataset of urban infrastructure, shown in the following table.
 
-|**Dataset** | **Classes** | **Panoramic images** | **Sub-images for training** | **Image size** | **Annotated pixels** |
+|**Dataset** | **Classes** | **Panoramic images** | **Sub-images for evaluating** | **Image size** | **Annotated pixels** |
 |:-:|:-:|:-:|:-:|:-:|:-:|
-| SkyScapes | 31 | 16 | 8820 | 5616×3744 | 3.36×10<sup>8</sup> |
-| MarsScapes | 18 | 195 | 10404 | Widths:1230∼12062 Heights: 472∼1649 | 3.92×10<sup>8</sup> |
+| SkyScapes | 31 | 16 | 17640 | 5616×3744 | 3.36×10<sup>8</sup> |
+| MarsScapes | 9 | 195 | 20802 | Widths:1230∼12062 Heights: 472∼1649 | 3.92×10<sup>8</sup> |
 
-In terms of the number of annotated pixels, the two datasets share the same order of data volume. Processed by the same methods mentioned above, SkyScapes contains 8820 images and MarsScapes 10404 images for training. Although the Martian terrain is not as diverse as the urban infrastructure of SkyScapes, the annotation of MarsScapes requires more labor for the following reasons:
+In terms of the number of annotated pixels, the two datasets have similar data volume. Processed by the same methods mentioned above, SkyScapes contains 17640 images and MarsScapes 20802 images for evaluating. Although the Martian terrain is not as diverse as the urban infrastructure of SkyScapes, the annotation of MarsScapes requires more labor for the following reasons:
 
 1) SkyScapes is a dataset collected in structured environment, where the boundary of an instance can be described by regular line segments. Under unstructured environment like Mars surface, however, the boundary of a terrain is mostly irregular and blurred;
 
@@ -55,5 +54,3 @@ In terms of the number of annotated pixels, the two datasets share the same orde
 3) The classification of an unstructured terrain relies on its relationships with neighboring areas, which requires us to comply with more complex annotating standards.
 
 In conclusion, MarsScapes provides enough samples with fine-grained annotations for training learning-based methods, thus contributing to autonomous navigation of rovers on Mars.
-
-
