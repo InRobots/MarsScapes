@@ -54,3 +54,16 @@ In terms of the number of annotated pixels, the two datasets have similar data v
 3) The classification of an unstructured terrain relies on its relationships with neighboring areas, which requires us to comply with more complex annotating standards.
 
 In conclusion, MarsScapes provides enough samples with fine-grained annotations for training learning-based methods, thus contributing to autonomous navigation of rovers on Mars.
+## Reference
+If you use **MarsScapes** in your research, please cite our paper:
+```
+@article{liu2023hybrid,
+  title={A hybrid attention semantic segmentation network for unstructured terrain on Mars},
+  author={Liu, Haiqiang and Yao, Meibao and Xiao, Xueming and Cui, Hutao},
+  journal={Acta Astronautica},
+  volume={204},
+  pages={492--499},
+  year={2023},
+  publisher={Elsevier}
+}
+```
