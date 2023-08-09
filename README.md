@@ -1,5 +1,9 @@
 # MarsScapes
-We release MarsScapes, the first panorama dataset for Martian terrain understanding. The dataset contains 195 panoramas of Mars surface with fine-grained annotations for semantic and instance segmentation, facilitating high-level scene understanding of Martian landforms and further enhancing the navigability of rovers over rough terrains in large areas. Note: Limited by the file size, we temporarily submit the first half of MarsScapes (i.e. from 122_1 to 527_1) as a representative subset. All samples will be provided after our paper is accepted.
+We release MarsScapes, the first panorama dataset for Martian terrain understanding. The dataset contains 195 panoramas of Mars surface with fine-grained annotations for semantic and instance segmentation, facilitating high-level scene understanding of Martian landforms and further enhancing the navigability of rovers over rough terrains in large areas. Note: Limited by the file size, we temporarily submit the first half of MarsScapes (i.e. from 122_1 to 527_1) as a representative subset. All samples will be provided soon. 
+
+For segmentation performance of learning-based methods on this dataset, please check our paper:
+
+[Liu, H., Yao, M., Xiao, X., & Cui, H. (2023). A hybrid attention semantic segmentation network for unstructured terrain on Mars. Acta Astronautica, 204, 492-499.](https://www.sciencedirect.com/science/article/abs/pii/S0094576522004064)
 
 ## Definitions of various terrains on Mars
 To characterize all landforms on Mars and label all pixels without omission, we define nine categories, including soil, sand, gravel, bedrock, rocks, tracks, shadows, background and unknown. We give specific descriptions and examples of each category in the [supplementary.pdf](https://github.com/InRobots/MarsScapes/files/7965342/supplementary.pdf).
