@@ -17,7 +17,7 @@ we adopt [PixelAnnotationTool](https://github.com/abreheret/PixelAnnotationTool)
 
 Currently, you can download **MarsScapes** by the following ways, we will soon release more efficient ways to get them.
 
-[**MarsScapes**:](http://gofile.me/6V28a/KfSE9y0Is) or by [Baidu Cloud](https://pan.baidu.com/s/1_MWpI-vpVaJGfQd1A9atHQ) with passcode: **masc**
+[**MarsScapes**](http://gofile.me/6V28a/KfSE9y0Is) or by [Baidu Cloud](https://pan.baidu.com/s/1_MWpI-vpVaJGfQd1A9atHQ) with passcode: **masc**
 
 ## Dataset structure
 The data file structure of MarsScapes and the JSON format of a sample are shown in the following figures.
