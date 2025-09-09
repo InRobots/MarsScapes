@@ -5,6 +5,8 @@ For segmentation performance of learning-based methods on this dataset, please c
 
 [Liu, H., Yao, M., Xiao, X., & Cui, H. (2023). A hybrid attention semantic segmentation network for unstructured terrain on Mars. Acta Astronautica, 204, 492-499.](https://www.sciencedirect.com/science/article/abs/pii/S0094576522004064)
 
+[Liu, H., Yao, M., Xiao, X., Zheng, B., & Cui, H. (2023). Marsscapes and udaformer: A panorama dataset and a transformer-based unsupervised domain adaptation framework for martian terrain segmentation. IEEE Transactions on Geoscience and Remote Sensing, 62, 1-17.](https://ieeexplore.ieee.org/abstract/document/10360155)
+
 ## Definitions of various terrains on Mars
 To characterize all landforms on Mars and label all pixels without omission, we define nine categories, including soil, sand, gravel, bedrock, rocks, tracks, shadows, background and unknown. We give specific descriptions and examples of each category in the [supplementary.pdf](https://github.com/InRobots/MarsScapes/files/7965342/supplementary.pdf).
 
@@ -73,5 +75,15 @@ If you use **MarsScapes** in your research, please cite our paper:
   pages={492--499},
   year={2023},
   publisher={Elsevier}
+}
+
+@article{liu2023marsscapes,
+  title={Marsscapes and udaformer: A panorama dataset and a transformer-based unsupervised domain adaptation framework for martian terrain segmentation},
+  author={Liu, Haiqiang and Yao, Meibao and Xiao, Xueming and Zheng, Bo and Cui, Hutao},
+  journal={IEEE Transactions on Geoscience and Remote Sensing},
+  volume={62},
+  pages={1--17},
+  year={2023},
+  publisher={IEEE}
 }
 ```
