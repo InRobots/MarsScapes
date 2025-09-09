@@ -65,7 +65,7 @@ In terms of the number of annotated pixels, the two datasets have similar data v
 
 In conclusion, MarsScapes provides enough samples with fine-grained annotations for training learning-based methods, thus contributing to autonomous navigation of rovers on Mars.
 ## Reference
-If you use **MarsScapes** in your research, please cite our paper:
+If you use **MarsScapes** in your research, please cite our papers:
 ```
 @article{liu2023hybrid,
   title={A hybrid attention semantic segmentation network for unstructured terrain on Mars},
